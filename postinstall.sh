@@ -1,10 +1,15 @@
 #!/bin/bash
 
+printf "/////////////////////////////////////////////////////\n";
 printf "//////////SCRIPT POST INSTALL UBUNTU ON MBP////////// \n";
-printf "//////////BY STEWIET////////// \n";
+printf "////////////////////////BY STEWIET/////////////////// \n";
+printf "/////////////////////////////////////////////////////\n";
 
-mkdir Postinstall
-cd Postinstall
+mkdir PostInstallFile
+cd PostInstallFile
+printf "Installing dependencies\n";
+sudo apt install git
+printf "done\n";
 
 git clone https://github.com/patjak/bcwc_pcie.git
 cd bcwc_pcie/firmware
@@ -64,7 +69,11 @@ sudo cp mbpfan.upstart /etc/init/mbpfan.conf
 
 cd ..
 
-sudo start mbpfan
+sudo mbpfan
 printf "done\n\n";
 
+printf "Cleaning...\n";
+sudo rm -r PostInstallFile
+printf "done\n";
+printf "Please Reboot system.\n";
 printf "Script Ended\n";
