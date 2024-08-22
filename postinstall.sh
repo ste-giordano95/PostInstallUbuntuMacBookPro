@@ -30,7 +30,7 @@ sudo apt-get install linux-headers-generic git kmod libssl-dev checkinstall
 printf "done\n"
 
 printf "Installing or reinstall gcc-12\n";
-sudo apt install --reinstall gcc-12
+sudo apt-get install --reinstall gcc-12
 printf "done\n";
 
 printf "Compiling firmware\n";
@@ -94,6 +94,7 @@ sudo mbpfan
 printf "done\n\n";
 
 printf "Cleaning...\n";
+sudo apt-get update
 
 # Naviga fuori dalla cartella temporanea
 cd ~
